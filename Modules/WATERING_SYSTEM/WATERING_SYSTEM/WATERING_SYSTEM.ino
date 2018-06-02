@@ -20,24 +20,29 @@
  */
 
 # define wateringTime 600     // Watering Time (miliseconds)
+# define n 15                 // wateringTime/n MUST BE INT
+# define nSamples 25          // Number of Samples
 
 # define pumpPIN    16         // (D0) Water Pump
 # define soilMoisturePIN 4     // (D2) FC-28 Soil Hygrometer Module
 
 boolean belowThreshold = false;
-uint8_t n = 15;
 
 /*
  * Custom Functions
  */
 void pinSetup() {
-  pinMode(pumpPIN,    OUTPUT);
+  pinMode(pumpPIN, OUTPUT);
   pinMode(soilMoisturePIN, INPUT);
 }
 
 // Threshold Value Defined by Potentiometer
 boolean checkMoistureSensor() {
-  return (soilMoisturePIN==HIGH);
+  uint8_t counter = 0;
+  for(int i = 0; i < nSamples; i++) {
+    if(soilMoisturePIN == HIGH) { counter++; }
+  }
+  return (counter>(nSamples/2));
 }
 
 void water() {
