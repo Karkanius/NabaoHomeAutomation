@@ -1,6 +1,6 @@
 # NabaoHomeAutomation
 
-Home Automation project developed as complementary work besides the degree of Computer and Telematics Engineering from Aveiro's University.
+Home Automation project developed as complementary work besides the degree of Computer and Telematics Engineering from University of Aveiro.
 
 ### Modules
 
