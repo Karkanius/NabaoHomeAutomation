@@ -8,8 +8,8 @@ The system is being developed having "modular" as keyword.
 
 * [CENTRAL](./Modules/CENTRAL) - The system's central unit. Receives and processes the information sent by the other modules.
 * [CONTROL_PANEL](./Modules/CONTROL_PANEL) - Fast way to check if the remaining modules (apart from the CENTRAL module) are working as expected.
-* [DHT22](./Modules/DHT22) - Module based on the component with the same name.
 * [WATERING_SYSTEM](./Modules/WATERING_SYSTEM) - Watering system based on a soil moisture sensor (FC-28) and a water pump.
+* [WEATHER_STATION](./Modules/WEATHER_STATION) - Module based on a DHT22, a BMP280, a GL5516 and a rain sensor.
 
 So far, these are the modules which are developed/projected.
 
