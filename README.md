@@ -13,6 +13,15 @@ The system is being developed having "modular" as keyword.
 
 So far, these are the modules which are developed/projected.
 
+### Libraries
+
+The following libraries are required for the _.ino_ files.
+
+* *Adafruit_BMP280.h* - BMP280 sensor control.
+* *DHT.h* - DHT22 sensor control.
+
+Libraries list will be updated everytime a ney library is required.
+
 ### Acknowledgments
 
 * Professor J. A. Fonseca
