@@ -40,18 +40,6 @@ int luxSum = 0;
 int luxValue = 0;
 
 /*
- * BMP280
- */
-# include <Adafruit_BMP280.h>
-# define bmp280sckPIN  5    // (D1) BMP280 SCK
-# define bmp280misoPIN 4    // (D2) BMP280 MISO
-# define bmp280mosiPIN 0    // (D3) BMP280 MOSI
-# define bmp280csPIN   2    // (D4) BMP280 CS
-Adafruit_BMP280 bmp(bmp280csPIN, bmp280mosiPIN, bmp280misoPIN, bmp280sckPIN);
-int presSum = 0;
-int presValue = 0;
-
-/*
  * RAIN SENSOR
  */
 # define rainPIN 14         // (D5) Rain Sensor
@@ -72,10 +60,6 @@ void collectSamples() {
     // GL5516
     luxSum += analogRead(gl5516PIN);
     //-------------------------------
-    // BMP280
-    tempSum += bmp.readTemperature();
-    presSum += bmp.readPressure();
-    //-------------------------------
     // RAIN SENSOR
     rainCount++;
     //-------------------------------
@@ -85,9 +69,8 @@ void collectSamples() {
 
 void calculateValues() {
   humValue  = humSum  / nSamples;
-  tempValue = tempSum / nSamples / 2;    // Both DHT22 and BMP280 are reading temperature values
+  tempValue = tempSum / nSamples;
   luxValue  = luxSum  / nSamples;
-  presValue = presSum / nSamples;
   rain = rainCount > (nSamples/2);
 }
 
@@ -95,7 +78,6 @@ void resetData() {
   humSum  = 0;
   tempSum = 0;
   luxSum  = 0;
-  presSum = 0;
   rainCount = 0;
 }
 
@@ -119,10 +101,6 @@ void printToSerial() {
   Serial.print("Luminosity  = ");
   Serial.print(luxValue);
   Serial.print("%\n");
-  // Air Pressure
-  Serial.print("Pressure    = ");
-  Serial.print(presValue);
-  Serial.print("Pa\n");
   // Rain
   Serial.print("Rain Sensor = ");
   Serial.print(rainState());
@@ -136,10 +114,6 @@ void printToSerial() {
 void setup() {
   Serial.begin(9600);
   delay(500);
-  if (!bmp.begin()) {  
-    Serial.println("Could not find a valid BMP280 sensor, check wiring!");
-    while (1);
-  }
 }
 
 void loop() {

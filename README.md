@@ -9,7 +9,7 @@ The system is being developed having "modular" as keyword.
 * [CENTRAL](./Modules/CENTRAL) - The system's central unit. Receives and processes the information sent by the other modules.
 * [CONTROL_PANEL](./Modules/CONTROL_PANEL) - Fast way to check if the remaining modules (apart from the CENTRAL module) are working as expected.
 * [WATERING_SYSTEM](./Modules/WATERING_SYSTEM) - Watering system based on a soil moisture sensor (FC-28) and a water pump.
-* [WEATHER_STATION](./Modules/WEATHER_STATION) - Module based on a DHT22, a BMP280, a GL5516 and a rain sensor.
+* [WEATHER_STATION](./Modules/WEATHER_STATION) - Module based on a DHT22, a GL5516 and a rain sensor.
 
 So far, these are the modules which are developed/projected.
 
@@ -17,7 +17,6 @@ So far, these are the modules which are developed/projected.
 
 The following libraries are required for the _.ino_ files.
 
-* *Adafruit_BMP280.h* - BMP280 sensor control.
 * *DHT.h* - DHT22 sensor control.
 
 Libraries list will be updated everytime a ney library is required.
