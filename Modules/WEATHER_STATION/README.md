@@ -6,4 +6,4 @@
 * [GL5516](./Modules/CENTRAL) - Photoresistor
 * [Rain Sensor](./Modules/CENTRAL)
 
-[![WEATHER_STATION_schematics](../../img/schematics/WEATHER_STATION.png)]
+![WEATHER_STATION_schematics](../../img/schematics/WEATHER_STATION.png)
