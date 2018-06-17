@@ -17,7 +17,10 @@ So far, these are the modules which are developed/projected.
 
 The following libraries are required for the _.ino_ files.
 
-* *DHT.h* - DHT22 sensor control.
+* *DHT.h*
+* *ESP8266WebServer.h*
+* *ESP8266WiFi.h*
+* *WiFiClient.h*
 
 Libraries list will be updated everytime a ney library is required.
 
