@@ -3,8 +3,8 @@
 #include <ESP8266WebServer.h>
  
 // Replace with your network credentials
-const char* ssid = "********";
-const char* password = "********";
+const char* ssid = "KarkaniusHS";
+const char* password = "NHATest0";
  
 ESP8266WebServer server(80);   //instantiate server at port 80 (http port)
  
